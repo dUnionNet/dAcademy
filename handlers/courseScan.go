@@ -66,6 +66,7 @@ func scanAll(root string) error {
 			return nil
 		}
 
+		folderName := filepath.Base(path)
 		courseYaml := filepath.Join(path, "course.yaml")
 		chaptersYaml := filepath.Join(path, "_chapters.yaml")
 
@@ -93,6 +94,7 @@ func scanAll(root string) error {
 				return fmt.Errorf("解析 course.yaml 失敗 %s: %v", path, err)
 			}
 			course.ChapterCount = len(chapters)
+			course.Folder = folderName
 			courses = append(courses, course)
 		}
 

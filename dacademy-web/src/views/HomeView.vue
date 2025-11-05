@@ -48,6 +48,7 @@ onMounted(fetchCourses)
         <h2>{{ course.name }}</h2>
         <p>{{ course.description }}</p>
         <p>Chapters: {{ course.chapter_count }}</p>
+        <RouterLink :to="`/c/${course.slug}`">Start</RouterLink>
       </div>
     </div>
   </div>

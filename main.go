@@ -17,6 +17,9 @@ func main() {
 		api.GET("/course/scan", func(c *gin.Context) {
 			handlers.CourseScanHandler(c)
 		})
+		api.GET("/course/:slug", func(c *gin.Context) {
+			handlers.CourseDetailHandler(c)
+		})
 
 	}
 
