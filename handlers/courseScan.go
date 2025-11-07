@@ -3,7 +3,6 @@ package handlers
 import (
 	"dAcademy/models"
 	"fmt"
-	"gopkg.in/yaml.v3"
 	"io/fs"
 	"log"
 	"os"
@@ -13,8 +12,11 @@ import (
 	"strings"
 	"sync"
 
-	"github.com/gin-gonic/gin"
+	"gopkg.in/yaml.v3"
+
 	"net/http"
+
+	"github.com/gin-gonic/gin"
 )
 
 var (
@@ -127,7 +129,11 @@ func buildChapters(coursePath string) ([]models.ChapterData, error) {
 			if !ok {
 				log.Fatalf("❌ 無效章節資料夾: %s", f.Name())
 			}
-			chapters = append(chapters, models.ChapterData{ID: id, Title: title})
+			chapters = append(chapters, models.ChapterData{
+				ID:     id,
+				Title:  title,
+				Folder: f.Name(),
+			})
 		}
 	}
 

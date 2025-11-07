@@ -2,10 +2,11 @@ package handlers
 
 import (
 	"dAcademy/models"
-	"github.com/gin-gonic/gin"
-	"gopkg.in/yaml.v3"
 	"net/http"
 	"os"
+
+	"github.com/gin-gonic/gin"
+	"gopkg.in/yaml.v3"
 )
 
 func CourseListHandler(c *gin.Context) {

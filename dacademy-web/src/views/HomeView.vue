@@ -1,6 +1,7 @@
 <script setup>
 import { ref, onMounted } from 'vue'
 import axios from 'axios'
+import Nav from '@/views/components/Nav.vue'
 
 const courses = ref([])
 const loading = ref(true)
@@ -33,6 +34,7 @@ onMounted(fetchCourses)
 </script>
 
 <template>
+  <Nav />
   <div class="p-6">
     <h1 class="text-2xl font-bold mb-4">Courses</h1>
     <button @click="scanCourses">Scan Courses</button>

@@ -2,8 +2,9 @@ package utils
 
 import (
 	"fmt"
-	"gopkg.in/yaml.v3"
 	"os"
+
+	"gopkg.in/yaml.v3"
 )
 
 func ReadYAML[T any](path string, out *T) error {

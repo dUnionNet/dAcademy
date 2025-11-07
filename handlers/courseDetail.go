@@ -3,9 +3,10 @@ package handlers
 import (
 	"dAcademy/models"
 	"dAcademy/utils"
-	"github.com/gin-gonic/gin"
 	"net/http"
 	"path/filepath"
+
+	"github.com/gin-gonic/gin"
 )
 
 func CourseDetailHandler(c *gin.Context) {

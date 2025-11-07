@@ -2,8 +2,9 @@ package main
 
 import (
 	"dAcademy/handlers"
-	"github.com/gin-gonic/gin"
 	"log"
+
+	"github.com/gin-gonic/gin"
 )
 
 func main() {
@@ -19,6 +20,9 @@ func main() {
 		})
 		api.GET("/course/:slug", func(c *gin.Context) {
 			handlers.CourseDetailHandler(c)
+		})
+		api.GET("/chapter/:courseSlug/:chapterID", func(c *gin.Context) {
+			handlers.ChapterDetailHandler(c)
 		})
 
 	}

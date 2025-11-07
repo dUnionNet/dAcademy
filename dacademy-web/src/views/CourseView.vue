@@ -43,7 +43,9 @@ onMounted(fetchCourseDetail)
     >
       <h2>{{ chapter.title }}</h2>
       <p>{{ chapter.id }}</p>
-
+      <RouterLink :to="`/c/${courseDetail.slug}/chapter/${chapter.id}`">
+        Go
+      </RouterLink>
     </div>
   </div>
 </template>

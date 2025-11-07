@@ -10,6 +10,10 @@ const router = createRouter({
         path: '/c/:slug(.*)',
         component: () => import('./views/CourseView.vue'),
       },
+      {
+        path: '/c/:courseSlug(.*)/chapter/:chapterID(.*)',
+        component: () => import('./views/course/ChapterView.vue'),
+      },
   ],
 })
 
