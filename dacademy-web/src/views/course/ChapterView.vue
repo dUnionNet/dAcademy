@@ -131,7 +131,7 @@ function nextSection() {
           </div>
 
           <div v-else-if="sections[current].type === 'markdown'">
-            <div v-html="marked.parse(sections[current].text)" class="prose"></div>
+            <div v-html="marked.parse(sections[current].text)"></div>
           </div>
 
           <!-- Quiz UI -->
