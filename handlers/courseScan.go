@@ -125,6 +125,10 @@ func buildChapters(coursePath string) ([]models.ChapterData, error) {
 	var chapters []models.ChapterData
 	for _, f := range files {
 		if f.IsDir() {
+			// Skip hidden folders
+			if f.Name()[0] == '.' {
+				continue
+			}
 			id, title, ok := parseChapterFolder(f.Name())
 			if !ok {
 				log.Fatalf("❌ 無效章節資料夾: %s", f.Name())
